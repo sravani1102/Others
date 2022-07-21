@@ -1,0 +1,29 @@
+m=int(input("rows"))
+n=int(input("colums"))
+l=[]
+for i in range(m):
+    l.append([int(x) for x in input().split()])
+m1=0
+j,k=-1,-1
+if m==1 or n==1:
+    for i in range(m):
+        for j in range(n):
+            print(l[i][j],end="")
+else:
+    while 1:
+        for i in range(m1,n):
+            print(l[m1][i],end=" ")
+        for j in range(m1+1,m):
+            print(l[j][i],end=" ")
+        if j!=-1:
+            for k in range(n-2,m1-1,-1):
+                print(l[j][k],end=" ")
+        if k!=-1:
+            for o in range(m-2,m1,-1):
+                print(l[o][k],end=" ")
+        m1=m1+1
+        n=n-1
+        m=m-1
+        i,j,k,o=1,-1,-1,-1
+        if m<=0 or m1==m:
+            break
